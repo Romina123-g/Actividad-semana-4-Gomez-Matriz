@@ -1,22 +1,35 @@
 #include <stdio.h>
 
 int main() {
+    int filas, columnas;
+
     
-    int gomez[5][5]; 
+    printf("Ingrese el numero de filas: ");
+    scanf("%d", &filas);
+    printf("Ingrese el numero de columnas: ");
+    scanf("%d", &columnas);
 
+   
+    int gomez[filas][columnas];
 
-    for(int i = 0; i < 5; i++) {
-        for(int j = 0; j < 5; j++) {
-            gomez[i][j] = 0;
+    
+    for(int i = 0; i < filas; i++) {
+        for(int j = 0; j < columnas; j++) {
+            if(i == j) {
+                gomez[i][j] = 1; 
+            } else {
+                gomez[i][j] = 0;
             }
         }
+    }
 
-        printf("Matriz gomez\n");
-        for(int i = 0; i < 5; i++) {
-            for(int j = 0; j < 5; j++) {
-            printf("%d ", gomez[i][j]); 
+    
+    printf("\nMatriz gomez:\n");
+    for(int i = 0; i < filas; i++) {
+        for(int j = 0; j < columnas; j++) {
+            printf("%d ", gomez[i][j]);
         }
-        printf("\n"); 
+        printf("\n");
     }
 
     return 0;
